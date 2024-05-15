@@ -10,9 +10,7 @@
     "Snippets"
   ],
   "activationEvents": [
-    "onLanguage:restructuredtext",
-    "workspaceContains:**/*.rst",
-    "onStartupFinished"
+    "onLanguage:restructuredtext"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -47,7 +45,8 @@
     "watch": "tsc -watch -p ./",
     "pretest": "yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
-    "test": "vscode-test"
+    "test": "vscode-test",
+    "package-vsix": "vsce package"
   },
   "devDependencies": {
     "@types/vscode": "^1.87.0",
@@ -58,6 +57,7 @@
     "eslint": "^8.56.0",
     "typescript": "^5.3.3",
     "@vscode/test-cli": "^0.0.6",
-    "@vscode/test-electron": "^2.3.9"
+    "@vscode/test-electron": "^2.3.9",
+    "vsce": "^2.15.0"
   }
 }
