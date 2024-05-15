@@ -1,0 +1,63 @@
+{
+  "name": "rst-fragment",
+  "displayName": "rst-fragment",
+  "description": "rst-fragment in editor",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "activationEvents": [
+    "onLanguage:restructuredtext",
+    "workspaceContains:**/*.rst",
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "restructuredtext",
+        "aliases": [
+          "reStructuredText",
+          "restructuredtext",
+          "ReStructured Text",
+          "reStructured Text",
+          "RST",
+          "ReST",
+          "reST"
+        ],
+        "extensions": [
+          ".rst",
+          ".rest"
+        ]
+      }
+    ],
+    "snippets": [
+      {
+        "language": "restructuredtext",
+        "path": "./snippets/rst-snippets.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "yarn run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "yarn run compile && yarn run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.87.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.6",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
